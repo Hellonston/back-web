@@ -1,0 +1,42 @@
+{
+  "name": "grupo-haliax-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "dev": "nodemon src/index.js",
+    "deploy": "node start.js",
+    "db:migrate": "npx sequelize db:migrate",
+    "db:seed": "npx sequelize db:seed:all",
+    "db:drop": "npx sequelize db:drop",
+    "db:create": "npx sequelize db:create",
+    "db:reset": "npm run db:drop && npm run db:create"
+
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/cors": "^4.0.0",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "jsonwebtoken": "^9.0.0",
+    "koa": "^2.14.2",
+    "koa-body": "^6.0.1",
+    "koa-jwt": "^4.0.4",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^12.0.0",
+    "nodemon": "^2.0.22",
+    "pg": "^8.11.0",
+    "sequelize": "^6.31.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "sequelize-cli": "^6.6.0"
+  }
+}
