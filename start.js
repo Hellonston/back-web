@@ -6,13 +6,17 @@ async function deploy() {
   console.log("Installing dependencies...");
   console.log(output1);
 
-  const { stdout: output2 } = await exec("npm db:migrate");
-  console.log("Migrating database...");
+  const { stdout: output2 } = await exec("npx sequelize-cli db:migrate:undo:all");
+  console.log("Undoing migrations...");
   console.log(output2);
 
-  const { stdout: output3 } = await exec("npm db:seed");
-  console.log("Seeding database...");
+  const { stdout: output3 } = await exec("npx sequelize-cli db:migrate");
+  console.log("Migrating database...");
   console.log(output3);
+
+  const { stdout: output4 } = await exec("npx sequelize-cli db:seed:all");
+  console.log("Seeding database...");
+  console.log(output4);
 }
 
 deploy();
